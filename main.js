@@ -9,27 +9,27 @@ function setup() {
     frameRate(30);
     push();
 
-    for (k=n-1; k<n; k++) {
+    for (k=1; k<n; k++) {
         console.log(k);
         var x = k;
-        var y = getFirstCoord(k);
-        var old_y = k;
+        var steps = 0;
         while (x !== 1) {
             if (x%2 === 0) {
-                y = x/2;
+                x = x/2;
             } else {
-                y = (3 * x) + 1;
+                x = (3 * x) + 1;
             }
-            line(x * s, y * s, y * s, y * s);
-            // ellipse(k,y, 1)
-            x = y;
+            steps++;
         } 
+
+        ellipse(k * s, steps * s, 1)
     }
-}
+} 
 
 function getCollatzChain(n) {
-    var chain = [];
-
+    var chain = [n];
+    var x = n;
+    var y = n;
     while (x !== 1) {
         if (x%2 === 0) {
             y = x/2;
@@ -40,4 +40,5 @@ function getCollatzChain(n) {
         x = y;
     } 
 
+    return chain;
 }
