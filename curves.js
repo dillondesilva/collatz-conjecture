@@ -1,5 +1,5 @@
 // n is the starting number of the collatz conjecture graph
-var n = 1000;
+var n = 2000;
 var s = 1;
 function setup() {
     createCanvas(800, 800);
