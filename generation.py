@@ -1,6 +1,8 @@
 # Generate n sequences of the Collatz Conjecture
 # and output to file
 
+MAX_NUMS = 2000
+
 def generateSequence(n):
     chain = [n]
     x = n
